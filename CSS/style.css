@@ -279,7 +279,7 @@
 .trends {
   display: flex;
   box-sizing: border-box;
-  min-height: 320px;
+  aspect-ratio: 5/4;
   width: 25%;
   background-color: #669999;
   background-image: url('../images/trend1.jpg');
@@ -619,7 +619,7 @@
   display: block;
   box-sizing: border-box;
 
-  width: 1200px;
+  max-width: 1200px;
   margin-bottom: 64px;
   margin-left: auto;
   margin-right: auto;
@@ -761,7 +761,7 @@
 
 @media (min-width: 641px) and (max-width: 1199px){
   .header {
-    min-width: 768px;
+    min-width: 100%;
     width: 100%;
     padding: 42px 35px 125px 35px;
     background-image: url('../images/banner-bg-tablet.jpg')
@@ -831,11 +831,9 @@
     font-size: 18px;
   }
   .content-trends {
+    width: 100%;
     box-sizing: border-box;
     flex-wrap: wrap;
-  }
-  .trends {
-    min-height: 246px;  
   }
   .trend {  
     padding: 34px 30px 28px 30px;
@@ -844,13 +842,16 @@
    font-size: 17px;
   }
   .content { 
-    max-width: 700px;
+    flex-wrap: nowrap;
     margin-left: auto;
     margin-right: auto;
-    padding: 50px 0; 
+    padding: 50px 35px; 
+  }
+  .posts {
+    margin-right: 35px;
   }
   .post {
-    width: 390px;
+    
     padding-bottom: 23px;
     border-bottom: 3px solid #eeeeee;
   }
@@ -862,6 +863,7 @@
   }
   .post-preview {
     width: 390px;
+    margin: auto;
   }
   .post-img {
     width: 390px;
@@ -871,7 +873,7 @@
     display: block;
     padding-top: 14px;
     margin-left: 0;
-    width: 390px;
+    width: auto;
   }
   .post-name-link {
     font-size: 17px;
@@ -886,22 +888,29 @@
     font-size: 17px;
   }
   .article-products {
-    width: 700px;
+    
     padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 35px;
+    padding-right: 35px;
   }
   .products {
     flex-wrap: wrap;
     gap: 22px;
+    width: 100%;
+    margin: auto;
   }
   .content-products {
-    width: calc(50% - 11px);
+    width: 350px;
+  }
+  .products-info {
+    
   }
   .footer {
-    max-width: 700px;
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 }  
 @media (min-width: 641px) 
@@ -918,7 +927,7 @@ and (max-width: 1199px) and (orientation: landscape) {
 }
 @media (max-width: 640px) {
   .header {
-    min-width: 360px;
+    min-width: 100%;
     width: 100%;
     padding: 30px 15px 216px 45px;
     background-image: url('../images/banner-mobile.jpg')
@@ -981,7 +990,7 @@ and (max-width: 1199px) and (orientation: landscape) {
     align-self: flex-end;
   }
   .header-logo {
-    width: 270px;
+    width: 100%;
   } 
   .header-title-block {
     display: flex;
@@ -989,8 +998,7 @@ and (max-width: 1199px) and (orientation: landscape) {
     padding-right: 20px;
   }
   .header-title { 
-    min-width:280px;
-    max-width: 560px;
+    width: 100%;
     margin-left: 0;
     margin-right:0;
     margin-top: 0;
@@ -1012,7 +1020,6 @@ and (max-width: 1199px) and (orientation: landscape) {
     gap: 3px;
   }
   .trends {
-    min-height: 230px;
     padding: 15px;
     align-items: flex-end;
   }
@@ -1021,7 +1028,7 @@ and (max-width: 1199px) and (orientation: landscape) {
   }
   .content {
     justify-content: flex-start;
-    max-width: 360px;
+    width: 100%;
     padding: 44px 15px;
   }
   .post {
@@ -1029,14 +1036,16 @@ and (max-width: 1199px) and (orientation: landscape) {
     border-bottom: 3px solid #eeeeee;
   }
   .post-preview {
-    width: 330px;
+    margin: auto;
+    max-width: 380px;
+    width: 100%;
   }
   .post-img {
-    width: 330px;
+    width: 100%;
   }
   .post-info {
     margin-left: 0px;
-    width: 330px;
+    width: 100%;
   }
   .post-name-link {  
     font-size: 16px;
@@ -1052,11 +1061,11 @@ and (max-width: 1199px) and (orientation: landscape) {
     margin-top: 35px;
   }
   .aside {
-    width: 330px;
+    width: 100%;
     margin-top: 44px;
   }
   .new-post-text {
-    width: 240px;
+    width: auto;
   }
   .aside-posts:nth-child(2) {
     margin-top: 57px;
@@ -1064,19 +1073,23 @@ and (max-width: 1199px) and (orientation: landscape) {
   .aside-posts:nth-child(n+3) {
     margin-top: 44px;
   }
+  .search-form {
+    width: 100%;
+  }
   .search-field {
-    width: 280px;
+    width: 100%;
+  }
+  .tegs {
+    gap: 5px;
   }
   .tegs-link {
     padding: 4px 13px 4px 13px;
-    margin-right: 4px; 
+    margin-right: 0; 
   }
   .tegs-item:nth-child(1n+4) {
     margin-top: 0px;
   }
-  .tegs-item:nth-child(1n+5) {
-    margin-top: 6px;
-  }
+  
   .article-products {
     max-width: 360px;
     margin-bottom: 44px;
@@ -1092,7 +1105,9 @@ and (max-width: 1199px) and (orientation: landscape) {
     font-size: 17px; 
   }
   .footer { 
-    max-width: 360px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
     padding-bottom: 47px;
   }
   .popup_container {
