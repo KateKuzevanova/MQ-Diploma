@@ -1103,7 +1103,7 @@ and (max-width: 1199px) and (orientation: landscape) {
   }
   
   .article-products {
-    max-width: 360px;
+    width: 100%;
     margin-bottom: 44px;
   }
   .content-products {
