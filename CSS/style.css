@@ -1049,7 +1049,6 @@ and (max-width: 1199px) and (orientation: landscape) {
   }
   .post-preview {
     margin: auto;
-    max-width: 380px;
     width: 100%;
   }
   .post-img {
