@@ -21,8 +21,9 @@
   display: block;
   min-width: 1200px;
   width: 100%;
-  padding: 27px 230px 125px 230px;
-  
+  padding-top: 27px;
+  padding-bottom: 125px;
+
   background-color: #669999;
   background-image: url('../images/banner-bg.jpg');
   background-repeat: no-repeat;
@@ -52,7 +53,7 @@
 .container {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
+  max-width: 1200px;
   margin: auto auto;
   justify-content: space-between;
   padding-left: 15px;
@@ -117,17 +118,23 @@
   font-family: 'Open Sans', 'sans-serif';
 
   z-index: 10;
+  padding-top: 55px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 35px;
 
   display: none;
 }
+
 .popup_container {
-  width: 390px;
-  height: 580px;
+  display: block;
+  max-width: 390px;
   margin: auto;
   background-color: #ffffff;
   position: relative;
 
   padding: 45px 30px;
+
 }
 .form_quiz {
   margin-top: 25px;
@@ -223,21 +230,37 @@
   background-color:#000000;
 }
 
-.popup_close, input[type=button] {
-  position: absolute;
-  text-indent:-9999px;
-  line-height:0;
-  padding: 0;
-
+.popup_close {
+  background-color: transparent;
   border: none;
-  background: url('../svg/form-x.svg') no-repeat 0 0;
+  padding: 0;
+  text-indent: -9999px;
+  cursor: pointer;  
+
   width: 20px;
   height: 20px;
-
-  top: -28px;
+  position: absolute;
+  top: -30px;
   right: 0;
+}
 
-  cursor: pointer;
+.popup_close:before, .popup_close:after {
+  content: "";
+  background-color: #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+}
+
+.popup_close:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup_close:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .article-trend {
@@ -645,7 +668,7 @@
   justify-content: space-between;
   flex-grow: 1;
   position: relative;
-  display: flex;
+  
   box-sizing: border-box;
   flex-direction: column;
   width: 350px;
@@ -924,16 +947,16 @@
   }
 }  
 @media (min-width: 641px) 
-and (max-width: 1199px) and (orientation: portrait) {
+and (max-width: 1199px) {
   .trends {
     width: calc(50% - 2px);
-  }
+  } 
 }
-@media (min-width: 641px) 
-and (max-width: 1199px) and (orientation: landscape) {
+@media (min-height: 641px) and (max-height: 1199px)
+and (orientation: landscape){
   .trends {
     width: calc(25% - 4px);
-  }
+  } 
 }
 @media (max-width: 640px) {
   .header {
@@ -1032,6 +1055,7 @@ and (max-width: 1199px) and (orientation: landscape) {
     gap: 3px;
   }
   .trends {
+    width: 100%;
     padding: 15px;
     align-items: flex-end;
   }
@@ -1134,17 +1158,11 @@ and (max-width: 1199px) and (orientation: landscape) {
     padding-bottom: 47px;
   }
   .popup_container {
-    width: 330px;
-    height: 545px;
     padding: 30px 25px;
   }
 }
-@media (max-width: 640px) and (orientation: portrait) {
-  .trends {
-    width: 100%;
-  }
-}
-@media (max-width: 640px) and (orientation: landscape) {
+
+@media (max-height: 640px) and (orientation: landscape) {
   .trends {
     width: calc(50% - 2px);
   }
